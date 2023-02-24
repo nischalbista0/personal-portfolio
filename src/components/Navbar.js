@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed h-[80px] w-full flex items-center justify-between bg-[#252525] py-4 px-8 bg-opacity-30 backdrop-blur-[4px]">
+    <div className="fixed z-50 h-[80px] w-full flex items-center justify-between bg-[#252525] border-b-1 border-black py-4 px-8 bg-opacity-30 backdrop-blur-[4px]">
       <div>
         <h1 className="hidden text-[#6b7688] text-[20px] md:block">
           &lt;{" "}
@@ -26,7 +26,7 @@ export default function Navbar() {
         </h1>
 
         <div className="h-[55px] w-[60px] bg-[#313bac] rounded-[50%] flex items-center justify-center cursor-pointer md:hidden">
-          <h1 className="text-[#f8fafc] text-[14px] font-bold">
+          <h1 className="text-[#f8fafc] text-[14px] font-semibold">
             &lt; NB /&gt;
           </h1>
         </div>
@@ -51,42 +51,44 @@ export default function Navbar() {
             <a href="#" class="inline-block">
               Home
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-0 900:h-[3px] bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               About
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-0 900:h-[3px] bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Work
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-0 900:h-[3px] bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Skills
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-0 900:h-[3px] bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Contact
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-0 900:h-[3px] bg-white rounded-md transition-all duration-300"></div>
           </li>
         </ul>
       </nav>
 
       <div>
         <button
-          class="w-12 h-6 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+          class={`w-12 h-6 rounded-full flex items-center transition duration-300 focus:outline-none shadow ${
+            darkMode ? "bg-gray-500" : "bg-gray-100"
+          }`}
           onClick={toggleDarkMode}
         >
           <div
