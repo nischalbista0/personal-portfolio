@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { SunIcon } from "@heroicons/react/24/solid";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   return (
@@ -29,8 +34,10 @@ export default function Navbar() {
 
       <nav
         className={`${
-          navbarOpen ? "translate-x-0 block" : "translate-x-full hidden"
-        } absolute z-40 top-0 right-0 pl-10 py-4 w-[80%] h-[100vh] bg-[#121212] shadow-white shadow-lg transition-all duration-300 ease-linear 900:block 900:transition-none 900:p-0 900:translate-x-0 900:w-auto 900:h-auto 900:bg-transparent 900:static 900:shadow-none`}
+          navbarOpen
+            ? "translate-x-0 transition-all shadow-[#ffffff2c]"
+            : "translate-x-full transition-none"
+        } absolute z-40 top-0 right-0 pl-10 py-4 w-[80%] h-[100vh] bg-[#121212] shadow-lg duration-300 ease-linear 900:transition-none 900:p-0 900:translate-x-0 900:w-auto 900:h-auto 900:bg-transparent 900:static 900:shadow-none`}
       >
         <div
           className="absolute top-6 right-9 cursor-pointer 900:hidden"
@@ -44,46 +51,51 @@ export default function Navbar() {
             <a href="#" class="inline-block">
               Home
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               About
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Work
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Skills
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
           </li>
 
           <li class="relative">
             <a href="#" class="inline-block">
               Contact
             </a>
-            <div class="absolute -bottom-1 left-0 w-0 h-[3px] bg-white rounded-md transition-all duration-300"></div>
+            <div class="absolute -bottom-1 left-0 w-0 h-[3px] 900:bg-white rounded-md transition-all duration-300"></div>
           </li>
         </ul>
       </nav>
 
       <div>
-        <button class="w-14 h-6 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow">
+        <button
+          class="w-12 h-6 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+          onClick={toggleDarkMode}
+        >
           <div
             id="switch-toggle"
-            class="w-8 h-8 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white"
+            class={`w-8 h-8 relative rounded-full transition duration-500 transform -translate-x-2 p-1 text-white ${
+              darkMode ? "bg-gray-700" : "bg-yellow-500 translate-x-6"
+            }`}
           >
-            <SunIcon />
+            {darkMode ? <MoonIcon /> : <SunIcon />}
           </div>
         </button>
       </div>
