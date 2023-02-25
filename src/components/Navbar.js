@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed z-50 h-[80px] w-full flex items-center justify-between bg-[#252525] border-b-1 border-black py-4 px-8 bg-opacity-30 backdrop-blur-[4px]">
+    <div className="fixed z-50 h-[80px] w-full flex items-center justify-between bg-[#252525] border-b-1 border-black py-4 px-8 bg-opacity-30 backdrop-blur-[4px] 900:px-16">
       <div>
         <h1 className="hidden text-[#6b7688] text-[20px] md:block">
           &lt;{" "}

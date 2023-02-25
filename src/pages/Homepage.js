@@ -1,5 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+import NavigationDots from "../components/NavigationDots";
+import SocialLinks from "../components/SocialLinks";
 
 export default function Homepage() {
   return (
@@ -7,6 +9,10 @@ export default function Homepage() {
       <Navbar />
 
       <HeroSection />
+
+      <SocialLinks />
+
+      <NavigationDots />
     </div>
   );
 }
